@@ -1,3 +1,4 @@
+import { json } from "react-router-dom";
 import AuthForm from "../components/AuthForm";
 
 function AuthenticationPage() {
@@ -10,6 +11,11 @@ export async function action({ request }) {
 
  const searchParams = new URL(request.url).searchParams;
  const mode = searchParams.get('mode') || 'login';
+
+
+ if(mode !== 'login' && mode !== 'signup'){
+  throw json({message: 'Unsuppported mode.'}, {status: 422})
+ }
 
   const data = await request.formData();
   const authData = {
