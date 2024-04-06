@@ -30,6 +30,10 @@ export async function action({ request }) {
   },
   body: JSON.stringify(authData)
 });
+ if (response.status === 422 || response.status === 401){
+  return response; 
+ }
 
+ 
 }
 
