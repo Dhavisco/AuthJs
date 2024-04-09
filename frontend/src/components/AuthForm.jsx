@@ -35,7 +35,7 @@ const isSubmitting = navigation.state === 'submitting';
           <Link to={`?mode=${isLogin ? 'signup' : 'login'}`}>
             {isLogin ? 'Create new user' : 'Login'}
           </Link>
-          <button>Save</button>
+          <button disabled={isSubmitting}>{isSubmitting? 'Submitting' : 'Save'}</button>
         </div>
       </Form>
     </>
