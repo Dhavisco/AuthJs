@@ -14,7 +14,7 @@ const getAuthToken = () => {
  const tokenDuration = getTokenDuration();
 
 if(!token){
-    return;
+    return null;
 }
 
  if(tokenDuration < 0){
