@@ -14,7 +14,10 @@ export function tokenLoader(){
 export function checkAuthLoader(){
     const token = getAuthToken();
 
-    if (!token){
-        redirect('/auth');
+    if(!token){
+      return redirect('/auth');
     }
+
+    return <>
+    </>
 }
